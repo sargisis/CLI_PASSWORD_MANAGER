@@ -8,7 +8,6 @@ use commands::Commands;
 use db::DataBase;
 
 fn main() {
-    // собираем аргументы от CLI
     let args: Vec<String> = env::args().skip(1).collect();
 
     if args.is_empty() {
@@ -20,7 +19,6 @@ fn main() {
         return;
     }
 
-    // пытаемся распарсить команду
     let cmd = match Commands::parse_command(args) {
         Ok(c) => c,
         Err(e) => {
